@@ -1,34 +1,55 @@
-import React from "react";
+import React from "react"
 
-/* Activity map */
-import { activities } from "../model/data";
+/* Activities map */
+import { activities } from "../model/data"
+
+/* Styling */
+import "../../styles/components/activity-type.scss" 
 
 interface UsersChoiceProps {
-    baseURL: string,
     usersChoice: string,
     setUsersChoice: React.Dispatch<React.SetStateAction<string>>
+    baseURL: string,
+    setFullURL: React.Dispatch<React.SetStateAction<string>>,
 }
 
-export default function UsersChoice( { baseURL, usersChoice, setUsersChoice }: UsersChoiceProps) {
+export default function UsersChoice( { usersChoice, setUsersChoice, baseURL, setFullURL }: UsersChoiceProps) {
     const activityTypes = Object.values(activities)
 
+    function handleActivityTypeChange(activityType: string, activityTypeIndex: number) {
+        setUsersChoice(activityType)
+
+        if (activityTypeIndex) {
+            setFullURL(baseURL + "?type=" + activityType)
+        } else {
+            setFullURL(baseURL + "/")
+        }
+    }
+
     return (
-        <div>
-            <p>Select a type of activity</p>
+        <fieldset>
+            <legend>Select a type of activity</legend>
 
             {activityTypes.map((activityType: string, index: number) => (
-                <label htmlFor={activityType} key={index}>
+                <span className="activity-type"
+                    key={index}
+                >
                     <input 
+                        className="activity-type__radio-btn"
                         type="radio" 
                         name="usersChoice" 
                         value={index} 
                         id={activityType}
                         checked={usersChoice === activityType}
-                        onChange={() => setUsersChoice(activityType)}
+                        onChange={() => handleActivityTypeChange(activityType, index)}
                     />
-                    {activityType[0].toUpperCase() + activityType.slice(1)}
-                </label>
+                    <label className="activity-type__label"
+                        htmlFor={activityType}
+                    >
+                        {activityType[0].toUpperCase() + activityType.slice(1)}
+                    </label>    
+                </span>
             ))}
-        </div>
+        </fieldset>
     )
 }
