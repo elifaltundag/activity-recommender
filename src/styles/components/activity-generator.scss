@@ -1,6 +1,9 @@
 @use "../utilities" as *;
 
 .activity-generator {
+    @include container;
+    width: max-content;
+
     display: block;
     font-family: $ff-accent;
     font-size: calc($fs--activity-type--btn * 1.1);

@@ -1,6 +1,8 @@
 @use "../utilities" as *;
 
 .header {
+    @include container;
+    
     font-family: inherit;
     font-size: $fs--header-title;
     margin-bottom: 1em;

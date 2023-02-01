@@ -1,0 +1,4 @@
+@mixin container {
+    width: min(1200px, 96%);
+    margin: 0 auto;
+}

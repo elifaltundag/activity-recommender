@@ -28,7 +28,7 @@ export default function UsersChoice( { usersChoice, setUsersChoice, baseURL, set
     }
 
     return (
-        <div>
+        <div className="selection">
             <p className="select-activity-type">Select a type of activity</p>
 
             <div className="activity-types-container">

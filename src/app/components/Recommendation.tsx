@@ -27,12 +27,14 @@ export default function Recommendation( { recommendedActivity }: RecommendationP
 
 
     return (
-        <p className="recommendation">
-            How about you
-            <span className="recommended-activity">
-                {formatActivityText(recommendedActivity)}
-            </span>
-            ?
-        </p>
+        <div className="recommendation">
+            <p>
+                How about you
+                <span className="recommended-activity">
+                    {formatActivityText(recommendedActivity)}
+                </span>
+                ?
+            </p>
+        </div>
     )
 }

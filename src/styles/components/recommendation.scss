@@ -2,9 +2,21 @@
 
 .recommendation {
     font-weight: 300;
-    font-size: $fs--recommendation;
+    font-size: $fs--recommendation-default;
+    background-color: hsla(var(--clr-white), 0.2);
+    border-radius: 1em;
+    padding: 1em;
+
+    width: min(800px, 90%);
+    margin: 0 auto 2em;
+
+    display: grid;
+    align-items: center;
 }
 
 .recommended-activity {
+    font-size: $fs--recommendation;
     font-weight: 600;
+    display: block;
+    margin-block: 0.2em;
 }

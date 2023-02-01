@@ -8,6 +8,7 @@
 
 
 body {
+    min-height: 100vh;
     color: hsl(var(--clr-white));
     font-family: $ff-main;
 
@@ -15,4 +16,7 @@ body {
     background: -webkit-linear-gradient(var(--deg), var(--clr-bg-green), var(--clr-bg-blue));  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(var(--deg), var(--clr-bg-green), var(--clr-bg-blue)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-repeat: no-repeat; 
+
+    overflow-x: hidden;
+
 }

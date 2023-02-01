@@ -6,7 +6,7 @@ import Header from './app/components/Header';
 import UsersChoice from './app/components/UsersChoice';
 import ActivityGeneratorBtn from './app/components/ActivityGenerator';
 import Recommendation from './app/components/Recommendation';
-
+import Footer from './app/components/Footer';
 
 /* STYLES */
 import "./styles/globals/app.scss";
@@ -64,6 +64,8 @@ function App() {
             {recommendedActivity && 
                 <Recommendation recommendedActivity={recommendedActivity} />
             }
+
+            <Footer />
         </div>
     );
 }

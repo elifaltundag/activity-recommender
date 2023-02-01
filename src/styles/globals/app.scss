@@ -2,20 +2,36 @@
 
 .App {
     min-height: 100vh;
-    width: min(1200px, 96%);
     text-align: center;
     
-    margin: 0 auto;
     padding-block: 1em; 
-    
 
+    display: grid;
+    grid-template-rows: repeat(3, auto) 1fr auto;
+    grid-template-areas: 
+        "header"
+        "selection"
+        "activity-generator-btn"
+        "recommendation"
+        "footer";
 
-    @include mq("min", "medium") {
-        text-align: left;
-        padding: 1.5em 1em;
+    .header {
+        grid-area: header;
     }
 
-    @include mq("min", "large") {
-        padding-left: 1.8em 1em;
+    .selection {
+        grid-area: selection;
+    }
+
+    .activity-generator {
+        grid-area: activity-generator-btn;
+    }
+
+    .recommendation {
+        grid-area: recommendation;
+    }
+
+    .footer {
+        grid-area: footer;
     }
 }
