@@ -16,23 +16,3 @@ body {
     background: linear-gradient(var(--deg), var(--clr-bg-green), var(--clr-bg-blue)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-repeat: no-repeat; 
 }
-
-.App {
-    min-height: 100vh;
-    width: min(1200px, 96%);
-    margin: 0 auto;
-
-    @include mq("max", "small") {
-        text-align: center;
-        padding-block: 1em; 
-    }
-
-    @include mq("min", "medium") {
-        text-align: left;
-        padding: 1.5em 1em;
-    }
-
-    @include mq("min", "large") {
-        padding-left: 1.8em 1em;
-    }
-}

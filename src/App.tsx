@@ -8,6 +8,9 @@ import ActivityGeneratorBtn from './app/components/ActivityGenerator';
 import Recommendation from './app/components/Recommendation';
 
 
+/* STYLES */
+import "./styles/globals/app.scss";
+import "./styles/components/header.scss";
 
 function App() {
     const [usersChoice, setUsersChoice] = useState<string>("")
