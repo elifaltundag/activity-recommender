@@ -1,0 +1,18 @@
+@use "../utilities" as *;
+
+.header {
+    font-family: inherit;
+    font-size: $fs--header-title;
+    margin-bottom: 2em;
+
+    &__title {
+        font-size: inherit;
+        font-weight: 600;
+        margin-bottom: 0.5em;
+    }
+
+    &__info {
+        font-weight: 200;
+        font-size: $fs--header-info;
+    }
+}

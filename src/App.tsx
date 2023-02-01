@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 
 /* COMPONENTS */ 
+import Header from './app/components/Header';
 import UsersChoice from './app/components/UsersChoice';
+import Recommendation from './app/components/Recommendation';
 
 function App() {
     const [usersChoice, setUsersChoice] = useState<string>("")
@@ -17,20 +19,17 @@ function App() {
         if (numberOfRequests) {
             fetch(fullURL)
                 .then(resp => resp.json())
-                .then(data => {
-                    console.log(data)
-                    setRecommendedActivity(data.activity)
-                })
+                .then(data => setRecommendedActivity(data.activity))
         }
-    }, [/* fullURL, */ numberOfRequests])
+        
+        // Make a GET request only when the "Get activity" button is clicked, not when fullURL changes
+        // eslint-disable-next-line
+    }, [numberOfRequests])
     
 
     return (
         <div className="App">
-            <header>
-                <h1>Activity Recommender</h1>
-                <p>Let's find you something to do</p>
-            </header>
+            <Header />
             
             <UsersChoice 
                 usersChoice={usersChoice}
@@ -39,13 +38,14 @@ function App() {
                 setFullURL={setFullURL}
             />
 
-            <button onClick={() => setNumberOfRequests(prevNumberOfRequests => prevNumberOfRequests + 1)}>
+            <button disabled={usersChoice === ""}
+                onClick={() => setNumberOfRequests(prevNumberOfRequests => prevNumberOfRequests + 1)}>
                 Get activity
             </button>
 
-            <p className="recommended-activity">
-                {recommendedActivity}
-            </p>
+            {recommendedActivity && 
+                <Recommendation recommendedActivity={recommendedActivity} />
+            }
         </div>
     );
 }

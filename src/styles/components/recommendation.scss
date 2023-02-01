@@ -1,0 +1,10 @@
+@use "../utilities" as *;
+
+.recommendation {
+    font-weight: 300;
+    font-size: $fs--recommendation;
+}
+
+.recommended-activity {
+    font-weight: 600;
+}

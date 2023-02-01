@@ -19,37 +19,42 @@ export default function UsersChoice( { usersChoice, setUsersChoice, baseURL, set
     function handleActivityTypeChange(activityType: string, activityTypeIndex: number) {
         setUsersChoice(activityType)
 
-        if (activityTypeIndex) {
-            setFullURL(baseURL + "?type=" + activityType)
-        } else {
+        if (activityTypeIndex === 10) {
             setFullURL(baseURL + "/")
+        } else {
+            setFullURL(baseURL + "?type=" + activityType)
         }
+
     }
 
     return (
-        <fieldset>
-            <legend>Select a type of activity</legend>
+        <div>
+            <p className="select-activity-type">Select a type of activity</p>
 
-            {activityTypes.map((activityType: string, index: number) => (
-                <span className="activity-type"
-                    key={index}
-                >
-                    <input 
-                        className="activity-type__radio-btn"
-                        type="radio" 
-                        name="usersChoice" 
-                        value={index} 
-                        id={activityType}
-                        checked={usersChoice === activityType}
-                        onChange={() => handleActivityTypeChange(activityType, index)}
-                    />
-                    <label className="activity-type__label"
-                        htmlFor={activityType}
+            <div className="activity-types-container">
+                {activityTypes.map((activityType: string, index: number) => {
+
+                    return (
+                    <span className="activity-type"
+                        key={index}
                     >
-                        {activityType[0].toUpperCase() + activityType.slice(1)}
-                    </label>    
-                </span>
-            ))}
-        </fieldset>
+                        <input 
+                            className="activity-type__radio-btn"
+                            type="radio" 
+                            name="usersChoice" 
+                            value={index + 1} 
+                            id={activityType}
+                            checked={usersChoice === activityType}
+                            onChange={() => handleActivityTypeChange(activityType, index + 1)}
+                        />
+                        <label className="activity-type__label"
+                            htmlFor={activityType}
+                        >
+                            {activityType[0].toUpperCase() + activityType.slice(1)}
+                        </label>    
+                    </span>
+                )})}
+            </div>
+        </div>
     )
 }
