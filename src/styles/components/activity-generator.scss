@@ -9,4 +9,25 @@
     border-radius: 1000px;
     margin: 1em auto 1.5em;
     cursor: pointer;
+    color: hsl(var(--clr-white));
+
+    background-color: transparent;
+
+    border: 2px solid hsl(var(--clr-white));
+
+    transition: transform 250ms ease;
+    
+    &:hover {
+        background-color: hsla(var(--clr-white), 0.2);
+    }
+
+    &:focus {
+        outline: 2px solid hsl(var(--clr-black));
+        border: 2px solid hsl(var(--clr-white));
+    }
+    
+    &:active {
+        transform: scale(0.9);
+    }
+
 }

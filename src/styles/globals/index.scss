@@ -8,7 +8,7 @@
 
 
 body {
-    color: var(--clr-txt-white);
+    color: hsl(var(--clr-white));
     font-family: $ff-main;
 
     background: var(--clr-bg-green);  /* fallback for old browsers */

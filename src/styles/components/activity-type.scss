@@ -35,13 +35,19 @@
         min-width: 18%;
     }
     
-
+    transition: transform 250ms ease;
+    
     &:hover {
-        background-color: hsla(0, 0, 100%, 0.3);
+        background-color: hsla(var(--clr-white), 0.2);
+    }
+
+    &:focus {
+        border: 2px solid hsl(var(--clr-black));
+        outline: 2px solid hsl(var(--clr-white));
     }
     
     &:active {
-        background-color: blue
+        transform: scale(0.9);
     }
     
     &__radio-btn {
@@ -57,10 +63,14 @@
         grid-row: 1 / 2;
         
         border-radius: inherit;
-        border: 3px solid white;
+        border: 2px solid hsl(var(--clr-white));
 
         &:checked {
-            background-color: red;
+            background-color: hsla(var(--clr-white), 1);
+
+            & + label {
+                color: var(--clr-txt-bluegreen);
+            }
         }
     }
     
