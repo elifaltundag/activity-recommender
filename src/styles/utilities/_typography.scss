@@ -7,8 +7,8 @@ $ff-accent: "Roboto Condensed", "Arial Black", sans-serif;
 
 
 /* RESPONSIVE FONT SIZES */ 
-$fs--header-title: clamp(1.2rem, 1rem + 2vw, 2.5rem);
-$fs--header-info: clamp(1rem, 0.8rem + 1.1vw, 2rem);
-$fs-activity-select: clamp(1.1rem, 0.9rem + 1.2vw, 2.1rem);
-$fs--activity-type--btn: clamp(1.1rem, 1rem + 2vw, 1.8rem);
+$fs--header-title: clamp(1.2rem, 1rem + 1.8vw, 2.5rem);
+$fs--header-info: clamp(1rem, 0.6rem + 0.8vw, 2rem);
+$fs-activity-select: clamp(1.1rem, 0.8rem + 0.8vw, 2.1rem);
+$fs--activity-type--btn: clamp(1.1rem, 1rem + 0.6vw, 1.8rem);
 $fs--recommendation: clamp(1.2rem, 1rem + 1.5vw, 2.3rem);

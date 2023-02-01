@@ -1,0 +1,12 @@
+@use "../utilities" as *;
+
+.activity-generator {
+    display: block;
+    font-family: $ff-accent;
+    font-size: calc($fs--activity-type--btn * 1.1);
+    font-weight: 700;
+    padding: 0.5em 1em;
+    border-radius: 1000px;
+    margin: 1em auto 1.5em;
+    cursor: pointer;
+}

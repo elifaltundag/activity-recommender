@@ -7,7 +7,7 @@
     justify-content: space-evenly;
     align-items: center;
     row-gap: 1em; 
-    column-gap: 1em;
+    column-gap: 1.5em;
 }
 
 .select-activity-type {
@@ -19,16 +19,25 @@
     z-index: 0;
     cursor: pointer;
     
+    flex-grow: 2;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    
-    border-radius: 1000px;
-    
+
+    border-radius: 0.5em;
     font-size: 1.5em;
 
+    @include mq("min", "small") {
+        max-width: 25%;
+    }
+
+    @include mq("min", "large") {
+        min-width: 18%;
+    }
+    
+
     &:hover {
-        background-color: palevioletred;
+        background-color: hsla(0, 0, 100%, 0.3);
     }
     
     &:active {
@@ -48,7 +57,7 @@
         grid-row: 1 / 2;
         
         border-radius: inherit;
-        border: 3px solid red;
+        border: 3px solid white;
 
         &:checked {
             background-color: red;
@@ -56,6 +65,7 @@
     }
     
     &__label {
+        text-align: center;
         font-family: $ff-accent;
         font-size: $fs--activity-type--btn;
         font-weight: 700;

@@ -6,21 +6,33 @@
     padding: 0;
 }
 
-/* * {
-    border: 1px solid white;
-} */
 
 body {
-    background-color: rgb(43, 43, 43);
-    color: #fefefe;
-    
-    
+    color: var(--clr-txt-white);
     font-family: $ff-main;
 
+    background: var(--clr-bg-green);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(var(--deg), var(--clr-bg-green), var(--clr-bg-blue));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(var(--deg), var(--clr-bg-green), var(--clr-bg-blue)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat; 
 }
 
 .App {
     min-height: 100vh;
-    width: min(800px, 96%);
+    width: min(1200px, 96%);
     margin: 0 auto;
+
+    @include mq("max", "small") {
+        text-align: center;
+        padding-block: 1em; 
+    }
+
+    @include mq("min", "medium") {
+        text-align: left;
+        padding: 1.5em 1em;
+    }
+
+    @include mq("min", "large") {
+        padding-left: 1.8em 1em;
+    }
 }

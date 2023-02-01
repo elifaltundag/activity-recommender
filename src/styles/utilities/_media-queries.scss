@@ -1,0 +1,24 @@
+$breakpoints: (
+    "small": 600,
+    "medium": 800,
+    "large": 1000
+);
+
+
+@mixin mq($min-or-max, $size) {
+    @if $min-or-max == "min" {
+        $bp: map-get($breakpoints, $size); 
+
+        @media (min-width: "#{$bp}px" ) {
+            @content;     
+        }
+    }
+
+    @else if $min-or-max == "max" {
+        $bp: calc(map-get($breakpoints, $size) - 0.02); 
+
+        @media (max-width: "#{$bp}px") {
+            @content;
+        }
+    }
+}
