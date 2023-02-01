@@ -50,7 +50,7 @@ export default function UsersChoice( { usersChoice, setUsersChoice, baseURL, set
                         <label className="activity-type__label"
                             htmlFor={activityType}
                         >
-                            {activityType[0].toUpperCase() + activityType.slice(1)}
+                            {activityType === "diy" ? activityType.toUpperCase() : activityType[0].toUpperCase() + activityType.slice(1)}
                         </label>    
                     </span>
                 )})}

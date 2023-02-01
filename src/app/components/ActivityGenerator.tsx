@@ -13,7 +13,9 @@ export default function ActivityGeneratorBtn({ usersChoice,
     return (
         <button className="activity-generator"
             disabled={usersChoice === ""}
-            onClick={() => setNumberOfRequests(prevNumberOfRequests => prevNumberOfRequests + 1)}>
+            onClick={() => {setNumberOfRequests(prevNumberOfRequests => prevNumberOfRequests + 1)}}
+            onMouseDown={(e) => e.preventDefault()}
+            >
             Tell me what to do
         </button>
     )

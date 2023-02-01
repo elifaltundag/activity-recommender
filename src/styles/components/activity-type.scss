@@ -6,8 +6,13 @@
     margin-block: 1.5em;
     justify-content: space-evenly;
     align-items: center;
-    row-gap: 1em; 
-    column-gap: 1.5em;
+    row-gap: 0.5em; 
+    column-gap: 0.8em;
+
+    @include mq("min", "small") {
+        row-gap: 1em;
+        column-gap: 1.5em;
+    }
 }
 
 .select-activity-type {
@@ -42,12 +47,12 @@
     }
 
     &:focus {
-        border: 2px solid hsl(var(--clr-black));
-        outline: 2px solid hsl(var(--clr-white));
+        outline: 3px solid hsl(var(--clr-black));
+        border: 3px solid hsl(var(--clr-white));
     }
     
     &:active {
-        transform: scale(0.9);
+        transform: scale(0.92);
     }
     
     &__radio-btn {
